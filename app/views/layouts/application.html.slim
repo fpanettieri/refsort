@@ -2,17 +2,16 @@ doctype html
 html
   head
     title RefSort
-    meta name="keywords" content="Sort Collection of Art References"
+    meta name="keywords" content="Sort Collections of References"
     meta name="author" content="Fabio R. Panettieri"
 
-    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.12/css/uikit.min.css'
-    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.12/js/uikit.min.js'
-    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.12/js/uikit-icons.min.js'
+    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
     = csrf_meta_tags
     = csp_meta_tag
+
   body
     == yield

@@ -1,11 +1,11 @@
-class AddAttachmentImgToArts < ActiveRecord::Migration[5.2]
+class AddAttachmentImgToRefs < ActiveRecord::Migration[5.2]
   def self.up
-    change_table :arts do |t|
+    change_table :refs do |t|
       t.attachment :img
     end
   end
 
   def self.down
-    remove_attachment :arts, :img
+    remove_attachment :refs, :img
   end
 end

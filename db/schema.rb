@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_09_03_153048) do
 
-  create_table "arts", force: :cascade do |t|
+  create_table "refs", force: :cascade do |t|
     t.string "slug"
     t.integer "votes"
     t.integer "views"

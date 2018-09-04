@@ -1,6 +1,6 @@
-class CreateArts < ActiveRecord::Migration[5.2]
+class CreateRefs < ActiveRecord::Migration[5.2]
   def change
-    create_table :arts do |t|
+    create_table :refs do |t|
       t.string :slug
       t.integer :votes
       t.integer :views
