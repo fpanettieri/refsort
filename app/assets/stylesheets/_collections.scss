@@ -8,6 +8,7 @@
     transition: all .1s ease-out;
     user-select: none;
 
+    &.new { background-color: #00D9C0; }
     &:hover, &:focus { .card-bg { opacity: 0; } }
     &:active { transform: scale(0.95); }
 
