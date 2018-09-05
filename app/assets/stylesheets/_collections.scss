@@ -8,7 +8,11 @@
     transition: all .1s ease-out;
     user-select: none;
 
-    &:hover, &:focus { .card-bg { opacity: 0; } }
+    &:hover, &:focus {
+      .card-bg { opacity: 0; }
+      .description { opacity: 1; }
+    }
+
     &:active { transform: scale(0.95); }
 
     .card-bg {
@@ -19,15 +23,27 @@
     }
 
     .title {
+      display: inline-block;
       color: #fff !important;
       background-color: #222;
-      padding: 4px 8px;
+      padding: .5rem;
+    }
+
+    .description {
+      color: #fff !important;
+      background-color: #222;
+      padding: .5rem;
+      transition: all .2s ease-out;
+      opacity: 0;
     }
   }
 }
 
 @media (min-width: 769px) {
   #collections {
-    .collection { height: 300px; }
+    .collection {
+      height: 300px;
+      margin-bottom: 5vh;
+    }
   }
 }

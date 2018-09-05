@@ -3,15 +3,16 @@ section#collections.section
     h1.title Collections
     /- @collections.each do |collection|
     .columns.is-flex-wrap
+      .column.is-3
+        .card.collection
+          .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
+          .card-content.is-relative
+            .title New
+            .description Lorem ipsum is the filler text most people are familiar with, and if you’ve spent any time at all poking around the internet you’ve surely seen the words lorem ipsum before.
       - 12.times do
         .column.is-3
           .card.collection
             .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
             .card-content.is-relative
               .title Logo Platita
-
-      .column.is-3
-        .card.collection
-          .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
-          .card-content.is-relative
-            .title New
+              .description Lorem ipsum is the filler text most people are familiar with, and if you’ve spent any time at all poking around the internet you’ve surely seen the words lorem ipsum before.
