@@ -8,11 +8,7 @@
     transition: all .1s ease-out;
     user-select: none;
 
-    &:hover, &:focus {
-      .card-bg { opacity: 0; }
-      .description { opacity: 1; }
-    }
-
+    &:hover, &:focus { .card-bg { opacity: 0; } }
     &:active { transform: scale(0.95); }
 
     .card-bg {
@@ -30,6 +26,7 @@
     }
 
     .description {
+      display: none;
       color: #fff !important;
       background-color: #222;
       padding: .5rem;
@@ -44,6 +41,9 @@
     .collection {
       height: 300px;
       margin-bottom: 5vh;
+      &:hover, &:focus { .description { opacity: 1; } }
+
+      .description { display: inline-block; }
     }
   }
 }
