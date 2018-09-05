@@ -6,7 +6,7 @@ module Sluggable
 
     private
       def generate_slug
-        self.slug = SecureRandom.urlsafe_base64 8 if self.slug.blank?
+        self.slug = SecureRandom.urlsafe_base64 16 if self.slug.blank?
       end
   end
 end

@@ -6,7 +6,7 @@ module Secretable
 
     private
       def generate_slug
-        self.secret = SecureRandom.urlsafe_base64 32 if self.slug.blank?
+        self.secret = SecureRandom.urlsafe_base64 64 if self.slug.blank?
       end
   end
 end
