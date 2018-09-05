@@ -7,7 +7,7 @@ section#collections.section
           .card-bg.is-overlay
           .card-content.is-relative
             .title + New
-            .description Each collection contains some variable number of items with shared significance and needs to be sorted.
+            .description Each collection contains a variable number of items with shared significance that needs to be sorted.
 
       /- @collections.each do |collection|
       - 12.times do
@@ -17,14 +17,4 @@ section#collections.section
             .card-content.is-relative
               .title Logo Platita
               .description Lorem ipsum is the filler text most people are familiar with, and if you’ve spent any time at all poking around the internet you’ve surely seen the words lorem ipsum before.
-
-javascript:
-  $(function () {
-    let links = $('[data-href]');
-
-    function followLink() {
-      window.location = $(this).data('href');
-    }
-
-    links.on('click', followLink);
-  });
+2  

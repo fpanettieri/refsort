@@ -1,0 +1,13 @@
+javascript:
+  // Google Analytics
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-125281284-1');
+
+  // Magic links
+  $(function () {
+    let links = $('[data-href]');
+    function followLink() { window.location = $(this).data('href'); }
+    links.on('click', followLink);
+  });
