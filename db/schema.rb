@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.string "slug"
     t.string "secret"
     t.text "description"
+    t.boolean "private"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "img_file_name"

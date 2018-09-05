@@ -5,6 +5,7 @@ class CreateCollections < ActiveRecord::Migration[5.2]
       t.string :slug
       t.string :secret
       t.text :description
+      t.boolean :private
 
       t.timestamps
     end
