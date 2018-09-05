@@ -1,4 +1,40 @@
-section#collections.section
-  .container
-    h1.title Create a collection
-    .subtitle A set of items that needs to be sorted.
+.halves#new-collection
+  .left-half
+    .container
+      section.section
+        h1.title Create a collection
+        p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
+
+        form.form action="#"
+          .field
+            label.label Name
+            .control
+              input.input type="text" placeholder="Collection Name (max 40 chars)" maxlength="40"
+          .field
+            label.label Description
+            .control
+              input.input type="text" placeholder="What is this collection about?"
+          .field
+            label.label Image
+            .file.has-name.is-fullwidth
+              label.file-label
+                input.file-input type="file" name="resume"
+                span.file-cta
+                  span.file-icon
+                    i.fas.fa-upload
+                  span.file-label Choose a file…
+          .field
+            label.label Is this a private collection?
+            .control
+              label.radio
+                input type="radio" name="private"
+                span  No
+              label.radio
+                input type="radio" name="private"
+                span  Yes
+
+          .field.is-grouped
+            .control
+              button.button.is-success Create
+            .control
+              button.button.is-text Cancel

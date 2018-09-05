@@ -37,6 +37,22 @@
   }
 }
 
+#new-collection {
+  .field:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.form-view {
+  background-image: url(/assets/col0.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+
 @media (min-width: 769px) {
   #collections {
     .collection {
