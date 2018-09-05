@@ -1,0 +1,33 @@
+#collections {
+  .collection {
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    margin: 0 20px 20px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all .1s ease-out;
+
+    &:hover, &:focus { transform: translateY(-12px); }
+    &:active { transform: scale(0.95); }
+
+
+    .title {
+      color: #fff !important;
+      background-color: #222;
+      padding: 4px 8px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  #collections {
+    .collection {
+      width: 200px;
+      height: 300px;
+      margin: 0 30px 30px 0;
+    }
+  }
+}
