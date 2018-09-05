@@ -2,15 +2,16 @@ section#collections.section
   .container
     h1.title Collections
     /- @collections.each do |collection|
-  .container
-    - 3.times do
-      a href="#"
+    .columns.is-flex-wrap
+      - 12.times do
+        .column.is-3
+          .card.collection
+            .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
+            .card-content.is-relative
+              .title Logo Platita
+
+      .column.is-3
         .card.collection
           .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
           .card-content.is-relative
-            .title Marca Platita
-    a href="#"
-      .card.collection
-        .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
-        .card-content.is-relative
-          .title New
+            .title New
