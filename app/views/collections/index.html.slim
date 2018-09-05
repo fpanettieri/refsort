@@ -2,11 +2,15 @@ section#collections.section
   .container
     h1.title Collections
     /- @collections.each do |collection|
-    - 12.times do
+  .container
+    - 3.times do
+      a href="#"
+        .card.collection
+          .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
+          .card-content.is-relative
+              h1.title Marca Platita
+    a href="#"
       .card.collection
         .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
         .card-content.is-relative
-            h1.title Marca Platita
-    .card.collection.is-primary
-      .card-content
-          h1.title New
+            h1.title New
