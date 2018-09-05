@@ -41,7 +41,7 @@
   #collections {
     .collection {
       height: 300px;
-      margin-bottom: 5vh;
+      margin-bottom: 2rem;
       &:hover, &:focus { .description { opacity: 1; } }
 
       .description { display: inline-block; }
