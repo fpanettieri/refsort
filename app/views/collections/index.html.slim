@@ -3,7 +3,7 @@ section#collections.section
     h1.title Collections
     .columns.is-flex-wrap
       .column.is-3
-        .card.collection.new
+        .card.collection.new data-href="/collections/new"
           .card-bg.is-overlay
           .card-content.is-relative
             .title + New
@@ -12,8 +12,19 @@ section#collections.section
       /- @collections.each do |collection|
       - 12.times do
         .column.is-3
-          .card.collection
+          .card.collection data-href="/collections/1adfo7d03"
             .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
             .card-content.is-relative
               .title Logo Platita
               .description Lorem ipsum is the filler text most people are familiar with, and if you’ve spent any time at all poking around the internet you’ve surely seen the words lorem ipsum before.
+
+javascript:
+  $(function () {
+    let links = $('[data-href]');
+
+    function followLink() {
+      window.location = $(this).data('href');
+    }
+
+    links.on('click', followLink);
+  });
