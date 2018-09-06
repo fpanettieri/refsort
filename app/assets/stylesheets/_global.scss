@@ -15,3 +15,16 @@ body {
 .is-flex-wrap {
   flex-wrap: wrap;
 }
+
+
+.halves {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.half {
+  width: 50vw;
+  height: 100vh;
+  flex: 0 0 auto;
+}
