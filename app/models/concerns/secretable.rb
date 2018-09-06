@@ -5,7 +5,7 @@ module Secretable
     before_validation :generate_secret
 
     private
-      def generate_slug
+      def generate_secret
         self.secret = SecureRandom.urlsafe_base64 64 if self.slug.blank?
       end
   end

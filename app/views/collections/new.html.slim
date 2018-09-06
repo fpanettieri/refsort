@@ -19,7 +19,7 @@
           label.label Image
           .file.has-name.is-fullwidth
             label.file-label
-              input#file-picker.file-input name="img" type="file"
+              input#file-picker.file-input name="img" type="file" accept="image/png,image/jpeg"
               span.file-cta
                 span.file-icon
                   i.fas.fa-upload
@@ -30,10 +30,10 @@
           label.label Is this a private collection?
           .control
             label.radio
-              input name="private" type="radio" checked="true"
+              input name="private" type="radio" value="false" checked="true"
               span  No
             label.radio
-              input name="private" type="radio"
+              input name="private" type="radio" value="true"
               span  Yes
 
         .field.is-grouped

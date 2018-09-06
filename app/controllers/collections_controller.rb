@@ -6,4 +6,18 @@ class CollectionsController < ApplicationController
   def new
     @collection = Collection.new
   end
+
+  def create
+    @collection = Collection.new(collection_params)
+    if @collection.save
+      redirect_to @collection
+    else
+      render "new"
+    end
+  end
+
+  private
+    def collection_params
+      params.permit(:name, :description, :private)
+    end
 end
