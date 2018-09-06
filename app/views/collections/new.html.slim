@@ -4,7 +4,7 @@
       h1.title Create a collection
       p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
 
-      = form_with model: @collection, local: true do |form|
+      = form_with model: @collection, local: true, multipart: true do |form|
         .field
           label.label Name
           .control
