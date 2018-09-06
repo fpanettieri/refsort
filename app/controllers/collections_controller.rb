@@ -10,6 +10,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     if @collection.save
+      # redirect to admin collection
       redirect_to @collection
     else
       render "new"
