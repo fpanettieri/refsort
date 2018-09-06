@@ -8,6 +8,15 @@ javascript:
   // Magic links
   $(function () {
     let links = $('[data-href]');
-    function followLink() { window.location = $(this).data('href'); }
+
+    function followLink() {
+      let href = $(this).data('href');
+      if ($(this).data('target') === '_blank') {
+        window.open(href);
+      } else {
+        window.location = $(this).data('href');
+      }
+    }
+    
     links.on('click', followLink);
   });
