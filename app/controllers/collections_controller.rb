@@ -10,8 +10,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     if @collection.save
-      # redirect to admin collection
-      redirect_to @collection
+      redirect_to edit_collection_path(@collection.secret)
     else
       render "new"
     end
