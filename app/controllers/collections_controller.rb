@@ -18,6 +18,6 @@ class CollectionsController < ApplicationController
 
   private
     def collection_params
-      params.permit(:name, :description, :private)
+      params.permit(:name, :description, :private, :img)
     end
 end
