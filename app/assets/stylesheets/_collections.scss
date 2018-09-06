@@ -38,8 +38,12 @@
 }
 
 #new-collection {
+  .section {
+    max-width: 40vw;
+    margin: 0 auto;
+  }
+  
   .field:not(:last-child) { margin-bottom: 1.5rem; }
-
   .splash-bg {
     background-image: url(/assets/new-collection.jpg);
     background-size: cover;
