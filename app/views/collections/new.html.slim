@@ -9,19 +9,23 @@
           label.label Name
           .control
             input.input type="text" placeholder="Collection Name (max 40 chars)" maxlength="40"
+
         .field
           label.label Description
           .control
             input.input type="text" placeholder="What is this collection about?"
+
         .field
           label.label Image
           .file.has-name.is-fullwidth
             label.file-label
-              input.file-input type="file" name="resume"
+              input#file-picker.file-input type="file" name="resume"
               span.file-cta
                 span.file-icon
                   i.fas.fa-upload
                 span.file-label Choose a file…
+              span#file-name.file-name Upload a file from your computer
+
         .field
           label.label Is this a private collection?
           .control
@@ -37,6 +41,20 @@
             button.button.is-success Create
           .control
             button.button.is-text Cancel
+
   .half.splash-bg.is-hidden-mobile
     section.section
       .credit.is-unselectable data-href='https://unsplash.com/photos/VSo5d9wlT7s' data-target='_blank' Photo by Martino Pietropoli on Unsplash
+
+javascript:
+  $(function() {
+    let $picker = $('#file-picker');
+    let $name = $('#file-name');
+
+    function onFilePicked() {
+      if(this.files.length < 1) { return; }
+      $name.html(this.files[0].name);
+    }
+
+    $picker.on('change', onFilePicked);
+  })
