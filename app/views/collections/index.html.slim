@@ -9,11 +9,10 @@ section#collections.section
             .title + New
             .description Each collection contains a variable number of items with shared significance that needs to be sorted.
 
-      /- @collections.each do |collection|
-      - 12.times do
+      - @collections.each do |collection|
         .column.is-3
-          .card.collection data-href="/collections/1adfo7d03" data-target='_blank'
-            .card-bg.is-overlay style="background-image: url(https://placeimg.com/400/600/any)"
+          .card.collection data-href="/collections/#{collection.slug}" data-target='_blank'
+            .card-bg.is-overlay style="background-image: url(#{collection.img.url(:medium)})"
             .card-content.is-relative
-              .title Logo Platita
-              .description Lorem ipsum is the filler text most people are familiar with, and if you’ve spent any time at all poking around the internet you’ve surely seen the words lorem ipsum before.
+              .title = collection.name
+              .description = collection.description
