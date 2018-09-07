@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.datetime "img_updated_at"
   end
 
-  create_table "refs", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
+    t.integer "collection_id"
     t.string "slug"
     t.string "secret"
     t.integer "votes"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.string "img_content_type"
     t.bigint "img_file_size"
     t.datetime "img_updated_at"
+    t.index ["collection_id"], name: "index_items_on_collection_id"
   end
 
 end
