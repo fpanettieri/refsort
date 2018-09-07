@@ -1,0 +1,50 @@
+= form_with model: @collection, local: true, multipart: true do |form|
+  .field
+    label.label Name
+    .control
+      input.input name="name" type="text" placeholder="Collection Name (max 40 chars)" maxlength="40" required="true" value=@collection.name
+
+  .field
+    label.label Description
+    .control
+      input.input name="description" type="text" placeholder="What is this collection about?" maxlength="100" required="true" value=@collection.description
+
+  .field
+    label.label Image
+    .file.has-name.is-fullwidth
+      label.file-label
+        input#file-picker.file-input name="img" type="file" accept="image/png,image/jpeg"
+        span.file-cta
+          span.file-icon
+            i.fas.fa-upload
+          span.file-label Choose a file…
+        span#file-name.file-name Upload a file from your computer
+
+  .field
+    label.label Is this a private collection?
+    .control
+      label.radio
+        input name="private" type="radio" value="false" checked="#{@collection.private == 'false'}"
+        span  No
+      label.radio
+        input name="private" type="radio" value="true" checked="#{@collection.private == 'false'}"
+        span  Yes
+
+  .field.is-grouped
+    .control
+      button.button.is-success Save
+    .control
+      button.button.is-text Cancel
+
+javascript:
+  $(function() {
+    let $picker = $('#file-picker');
+    let $name = $('#file-name');
+
+    function onFilePicked() {
+      if(this.files.length < 1) { return; }
+      $name.html(this.files[0].name);
+    }
+
+    $picker.on('change', onFilePicked);
+  })

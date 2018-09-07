@@ -6,7 +6,7 @@ class CreateCollections < ActiveRecord::Migration[5.2]
       t.string :secret
       t.text :description
       t.boolean :private
-      t.boolean :approved, default: false
+      t.boolean :approved, default: true
 
       t.timestamps
     end
