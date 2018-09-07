@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
   def index
-    @collections = Collection.where(private: false)
+    @collections = Collection.where(private: false, approved: true)
   end
 
   def new
