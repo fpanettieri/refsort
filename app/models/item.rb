@@ -1,4 +1,6 @@
-class Ref < ApplicationRecord
+class Item < ApplicationRecord
+  belongs_to :collection
+  
   include Sluggable
   include Secretable
 

@@ -1,4 +1,6 @@
 class Collection < ApplicationRecord
+  has_many :items
+
   include Sluggable
   include Secretable
 

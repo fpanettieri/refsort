@@ -24,10 +24,10 @@
     label.label Is this a private collection?
     .control
       label.radio
-        input name="private" type="radio" value="false" checked="#{@collection.private == 'false'}"
+        input name="private" type="radio" value="false" checked="#{(!@collection.private).to_s}"
         span  No
       label.radio
-        input name="private" type="radio" value="true" checked="#{@collection.private == 'false'}"
+        input name="private" type="radio" value="true" checked="#{@collection.private.to_s}"
         span  Yes
 
   .field.is-grouped
