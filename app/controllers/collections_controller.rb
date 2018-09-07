@@ -16,6 +16,10 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def edit
+    @collection = Collection.find_by(secret: params[:id])
+  end
+
   private
     def collection_params
       params.permit(:name, :description, :private, :img)
