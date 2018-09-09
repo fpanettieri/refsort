@@ -43,6 +43,7 @@ class CollectionsController < ApplicationController
   private
     def by_secret
       @collection = Collection.find_by(secret: params[:id])
+      redirect_to root_path if @collection.nil?
     end
 
     def collection_params
