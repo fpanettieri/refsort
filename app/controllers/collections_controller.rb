@@ -33,6 +33,11 @@ class CollectionsController < ApplicationController
     redirect_to root_path
   end
 
+  def sort
+    @collection = Collection.find_by(slug: params[:slug])
+    redirect_to root_path if @collection.nil?
+  end
+
   private
     def collection_params
       params.permit(:name, :description, :private, :img)
