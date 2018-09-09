@@ -2,6 +2,6 @@
 class CollectionMailerPreview < ActionMailer::Preview
   def new_collection_email
     @collection = Collection.first
-    CollectionMailer.new_collection_email(@collection.name, @collection.description, @collection.secret, 'test@mailinator.com')
+    CollectionMailer.new_collection_email(@collection.name, @collection.description, @collection.slug, @collection.secret, 'test@mailinator.com')
   end
 end

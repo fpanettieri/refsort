@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     if @collection.save
-      CollectionMailer.new_collection_email(@collection.name, @collection.description, @collection.secret, params[:email]).deliver!
+      CollectionMailer.new_collection_email(@collection.name, @collection.description, @collection.slug, @collection.secret, params[:email]).deliver!
       redirect_to edit_collection_path(@collection.secret)
     else
       render "new"

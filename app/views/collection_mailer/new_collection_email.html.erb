@@ -9,7 +9,8 @@
   <body>
     <p><strong>New Collection: <%= @name %></strong></p>
     <p>You have successfully created a new collection at <a href="https://refsort.com">refsort.com</a></p>
-    <p>To edit your collection, just follow <a href="<%= @url %>">this link</a></p>
+    <p>Follow this link to sort your collection:<br><a href="<%= @sort %>"><%= @sort %></a></p>
+    <p>To manage your collection, just follow this link:<br><a href="<%= @secret %>"><%= @secret %></a></p>
     <p>Have a great day!</p>
   </body>
 </html>
