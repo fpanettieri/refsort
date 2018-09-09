@@ -1,4 +1,6 @@
 class CollectionsController < ApplicationController
+  before_action :by_secret, only: [:show, :edit, :update, :destroy]
+
   def index
     @collections = Collection.where(private: false, approved: true)
   end
@@ -17,18 +19,18 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
-    @collection = Collection.find_by(secret: params[:id])
   end
 
   def update
-    @collection = Collection.find(params[:id])
     @collection.update(collection_params)
     redirect_to edit_collection_path(@collection.secret), notice: 'Collection updated.'
   end
 
   def destroy
-    @collection = Collection.find_by(secret: params[:id])
     @collection.destroy
     redirect_to root_path
   end
@@ -39,6 +41,10 @@ class CollectionsController < ApplicationController
   end
 
   private
+    def by_secret
+      @collection = Collection.find_by(secret: params[:id])
+    end
+
     def collection_params
       params.permit(:name, :description, :private, :img)
     end

@@ -1,4 +1,4 @@
-= form_with model: @collection, local: true, multipart: true do |form|
+= form_with url: "/collections/#{@collection.secret}", local: true, multipart: true do |form|
   .field
     label.label Name
     .control

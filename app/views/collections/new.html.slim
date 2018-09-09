@@ -3,7 +3,8 @@
     section.section
       h1.title Create a collection
       p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
-      = render 'form'
+      = form_with url: "/collections", local: true, method: :post, multipart: true do |form|
+        = render 'form'
 
   .half.splash-bg.is-hidden-mobile
     section.section
