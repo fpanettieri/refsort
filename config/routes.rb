@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :collections
-  get  '/:slug', to: 'collections#sort'
+  get  '/:id', to: 'collections#show'
   root to: 'collections#index'
 end

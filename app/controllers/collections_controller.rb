@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action :by_secret, only: [:show, :edit, :update, :destroy]
+  before_action :by_secret, only: [:edit, :update, :destroy]
 
   def index
     @collections = Collection.where(private: false, approved: true)
@@ -20,6 +20,8 @@ class CollectionsController < ApplicationController
   end
 
   def show
+    @collection = Collection.find_by(slug: params[:slug])
+    redirect_to root_path if @collection.nil?
   end
 
   def edit
@@ -33,11 +35,6 @@ class CollectionsController < ApplicationController
   def destroy
     @collection.destroy
     redirect_to root_path
-  end
-
-  def sort
-    @collection = Collection.find_by(slug: params[:slug])
-    redirect_to root_path if @collection.nil?
   end
 
   private
