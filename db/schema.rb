@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.string "img_content_type"
     t.bigint "img_file_size"
     t.datetime "img_updated_at"
+    t.index ["secret"], name: "index_collections_on_secret"
+    t.index ["slug"], name: "index_collections_on_slug"
   end
 
   create_table "items", force: :cascade do |t|
