@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_09_03_153048) do
 
-  create_table "collections", force: :cascade do |t|
+  create_table "collections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "slug"
     t.string "secret"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.index ["slug"], name: "index_collections_on_slug"
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "collection_id"
     t.string "slug"
     t.string "secret"
