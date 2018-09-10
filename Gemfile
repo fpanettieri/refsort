@@ -5,7 +5,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 
 gem 'aws-sdk-s3', '~> 1.19'
-# gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'mysql2', '~> 0.5.2'
 gem 'recaptcha', '~> 4.12'
 gem 'jbuilder', '~> 2.5'
