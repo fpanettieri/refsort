@@ -47,10 +47,9 @@ body {
   font-weight: 200;
 }
 
-.navbar {
-  border-bottom: 1px solid #ccc;
-}
+.navbar { border-bottom: 1px solid #ccc; }
+.section { padding: 1.5rem; }
 
-.section {
-  padding: 1.5rem;
-}
+// Flex utils
+.flex-force { display: flex !important; }
+.flex-grow { flex-grow: 1; }
