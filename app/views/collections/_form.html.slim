@@ -36,11 +36,15 @@
       input name="private" type="radio" value="true" checked="#{@collection.private.to_s}"
       span  Yes
 
+- if @collection.new_record?
+  .field
+    = recaptcha_tags
+
 .field.is-grouped
   .control
-    button.button.is-success Save
+    button.button.is-success type="submit" Save
   .control
-    button.button.is-text Cancel
+    button.button.is-text onclick="history.go(-1)" Cancel
 
 javascript:
   $(function() {
