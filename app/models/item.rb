@@ -4,6 +4,6 @@ class Item < ApplicationRecord
   include Sluggable
   include Secretable
 
-  has_attached_file :img, styles: { medium: "400x600>", thumb: "40x60>" }, default_url: "https://placeimg.com/400/600/any"
+  has_attached_file :img, styles: { large: "1200x1200>" medium: "512x512>", thumb: "64x64>" }, default_url: "https://placeimg.com/600/600/any"
   validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
 end
