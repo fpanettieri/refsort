@@ -7,8 +7,8 @@ function xhr_delete(url, cb, err) {
   let csrf = $('meta[name="csrf-token"]').attr('content');
   let xhr = new XMLHttpRequest();
 
-  xhr.onerror = function() { err(); }
-  xhr.onload = function() {
+  xhr.onerror = err;
+  xhr.onload = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       cb(xhr.response);
     } else {
