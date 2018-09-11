@@ -51,8 +51,8 @@ hr {
       border-top: none;
     }
 
-    &:first-child .section { padding-left: 0; }
-    &:last-child .section { padding-right: 0; }
+    &:first-child .section { padding: 1.5rem 3rem 1.5rem 0; }
+    &:last-child .section { padding: 1.5rem 0 1.5rem 3rem; }
   }
 }
 
