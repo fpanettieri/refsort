@@ -39,14 +39,18 @@ hr {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 100vh;
+    //height: 100vh;
   }
 
   .half {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     overflow: auto;
-    &.separator { border-left: 1px solid #dbdbdb; }
+
+    &.separator {
+      border-left: 1px solid #dbdbdb;
+      border-top: none;
+    }
   }
 }
 

@@ -1,3 +1,5 @@
+= render 'layouts/navbar'
+
 .halves#new-collection
   .half
     section.section
@@ -19,6 +21,16 @@
   .half.separator
     section.section
       h1.title Items
+      p.subtitle.has-text-grey.is-hidden-mobile Status:
+
+      .columns.flex-wrap
+        - 5.times do
+          .column.is-3
+            .card.collection.new data-href="/collections/new"
+              .card-bg.is-overlay
+              .card-content.is-relative
+                .title + New
+                /.description Each collection contains a variable number of items with shared significance that needs to be sorted.
 
 javascript:
   $(() => {
