@@ -46,6 +46,16 @@
   .control
     a.button.is-text href=root_path Cancel
 
+- unless @collection.new_record?
+  hr
+  label.label Delete this collection
+  .field.has-addons
+    .control
+      input.input name="delete-confirmation" type="text" placeholder="Collection name"
+      p.help Once you delete a collection, there is no going back!
+    .control
+      a.button.is-danger href="#" Delete
+
 javascript:
   $(function() {
     let $picker = $('#file-picker');

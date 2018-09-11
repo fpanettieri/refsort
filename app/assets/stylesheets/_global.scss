@@ -4,17 +4,14 @@ $p3: #D7CEB2;
 $p4: #00D9C0;
 $p5: #FFFFF3;
 
-body {
-  background-color: #fff;
+body { background-color: #fff; }
+
+hr {
+  height: 1px;
+  background-color: #dbdbdb;
 }
 
-.is-relative {
-  position: relative;
-}
-
-.is-flex-wrap {
-  flex-wrap: wrap;
-}
+.is-relative { position: relative; }
 
 .halves {
   display: flex;
@@ -28,18 +25,14 @@ body {
   overflow: auto;
 }
 
-.button {
-  border-radius: 0;
-}
+.button { border-radius: 0; }
 
 .input {
   border-radius: 0;
   box-shadow: none;
 }
 
-.file-cta {
-  border-radius: 0;
-}
+.file-cta { border-radius: 0; }
 
 .brand-logo {
   font-size: 1.5rem;
@@ -53,3 +46,4 @@ body {
 // Flex utils
 .flex-force { display: flex !important; }
 .flex-grow { flex-grow: 1; }
+.flex-wrap { flex-wrap: wrap; }
