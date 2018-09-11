@@ -34,7 +34,7 @@ class CollectionsController < ApplicationController
 
   def destroy
     @collection.destroy
-    redirect_to root_path
+    head 200
   end
 
   private

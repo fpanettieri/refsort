@@ -16,7 +16,7 @@ function xhr_delete(url, cb, err) {
     }
   }
 
-  xhr.open('DELETE', url);
+  xhr.open('DELETE', url, true);
   xhr.setRequestHeader('X-CSRF-Token', csrf);
-  xhr.send();
+  xhr.send(null);
 }
