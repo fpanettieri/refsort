@@ -30,10 +30,10 @@
   label.label Is this a private collection?
   .control
     label.radio
-      input name="private" type="radio" value="false" checked="#{(!@collection.private).to_s}"
+      = radio_button_tag 'priv', 'false', !@collection.priv
       span  No
     label.radio
-      input name="private" type="radio" value="true" checked="#{@collection.private.to_s}"
+      = radio_button_tag 'priv', 'true', @collection.priv
       span  Yes
 
 - if @collection.new_record?

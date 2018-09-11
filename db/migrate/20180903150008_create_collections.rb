@@ -5,7 +5,7 @@ class CreateCollections < ActiveRecord::Migration[5.2]
       t.string :slug, index: true
       t.string :secret, index: true
       t.text :description
-      t.boolean :private, default: false
+      t.boolean :priv, default: false
       t.boolean :approved, default: true
 
       t.timestamps

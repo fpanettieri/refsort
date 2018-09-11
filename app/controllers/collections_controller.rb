@@ -2,7 +2,7 @@ class CollectionsController < ApplicationController
   before_action :by_secret, only: [:edit, :update, :destroy]
 
   def index
-    @collections = Collection.where(private: false, approved: true)
+    @collections = Collection.where(priv: false, approved: true)
   end
 
   def new
@@ -44,6 +44,6 @@ class CollectionsController < ApplicationController
     end
 
     def collection_params
-      params.permit(:name, :description, :private, :img)
+      params.permit(:name, :description, :priv, :img)
     end
 end
