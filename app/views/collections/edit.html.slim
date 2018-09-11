@@ -6,6 +6,32 @@
       = form_with url: "/collections/#{@collection.secret}", method: :put, local: true, multipart: true do |form|
         = render 'form'
 
+      hr
+      label.label Delete this collection
+      .field.has-addons
+        .control
+          input.input name="del-confirm" type="text" placeholder="Collection name"
+          p.help
+          p.help Once you delete a collection, there is no going back!
+        .control
+          #delete-btn.button.is-danger Delete
+
   .half.splash-bg.is-hidden-mobile style="background-image: url(#{asset_path 'new-collection.jpg'})"
     section.section
       .credit.is-unselectable data-href='https://unsplash.com/photos/VSo5d9wlT7s' data-target='_blank' Photo by Martino Pietropoli on Unsplash
+
+javascript:
+  $(function() {
+    let $name = $('input[name="name"]');
+
+    let $delete = $('#delete-btn');
+    let $delete_confirm = $('input[name="del-confirm"]');
+
+    function onDelete() {
+      if ($delete_confirm.val() != $name.val()) { return alert("Please type the name of the collection to confirm."); }
+      if (!confirm("Are you absolutely sure? This action cannot be undone.")){ return; }
+      console.log('delete');
+    }
+
+    $delete.on('click', onDelete);
+  })
