@@ -1,36 +1,37 @@
 = render 'layouts/navbar'
 
-.halves#new-collection
-  .half
-    section.section
-      h1.title Edit collection
-      p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
-      = form_with url: "/collections/#{@collection.secret}", method: :put, local: true, multipart: true do |form|
-        = render 'form'
+.container
+  .halves#new-collection
+    .half
+      section.section
+        h1.title Edit collection
+        p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
+        = form_with url: "/collections/#{@collection.secret}", method: :put, local: true, multipart: true do |form|
+          = render 'form'
 
-      hr
-      label.label Delete this collection
-      .field.has-addons
-        .control
-          input.input name="del-confirm" type="text" placeholder="Collection name"
-          p.help
-          p.help Once you delete a collection, there is no going back!
-        .control
-          #delete-btn.button.is-danger Delete
+        hr
+        label.label Delete this collection
+        .field.has-addons
+          .control
+            input.input name="del-confirm" type="text" placeholder="Collection name"
+            p.help
+            p.help Once you delete a collection, there is no going back!
+          .control
+            #delete-btn.button.is-danger Delete
 
-  .half.separator
-    section.section
-      h1.title Items
-      p.subtitle.has-text-grey.is-hidden-mobile Status:
+    .half.separator
+      section.section
+        h1.title Items
+        p.subtitle.has-text-grey.is-hidden-mobile Status:
 
-      .columns.flex-wrap
-        - 5.times do
-          .column.is-3
-            .card.collection.new data-href="/collections/new"
-              .card-bg.is-overlay
-              .card-content.is-relative
-                .title + New
-                /.description Each collection contains a variable number of items with shared significance that needs to be sorted.
+        .columns.flex-wrap
+          - 5.times do
+            .column.is-3
+              .card.collection.new data-href="/collections/new"
+                .card-bg.is-overlay
+                .card-content.is-relative
+                  .title + New
+                  /.description Each collection contains a variable number of items with shared significance that needs to be sorted.
 
 javascript:
   $(() => {
