@@ -33,6 +33,7 @@ class CollectionsController < ApplicationController
   end
 
   def destroy
+    byebug
     @collection.destroy
     redirect_to root_path
   end

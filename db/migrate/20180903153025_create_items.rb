@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :secret
       t.integer :votes
       t.integer :views
+      t.float :score
 
       t.timestamps
     end
