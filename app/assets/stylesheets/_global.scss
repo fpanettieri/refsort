@@ -59,8 +59,8 @@ hr {
       border-top: none;
     }
 
-    &:first-child .section { padding: 1.5rem 3rem 1.5rem 0; }
-    &:last-child .section { padding: 1.5rem 0 1.5rem 3rem; }
+    &.half-left .section { padding: 1.5rem 3rem 1.5rem 0; }
+    &.half-right .section { padding: 1.5rem 0 1.5rem 3rem; }
   }
 }
 
@@ -90,7 +90,6 @@ hr {
     cursor: pointer;
     font-size: .8rem;
     transition: all .1s ease-out;
-    z-index: 100;
 
     &:hover { transform: scale(1.05); }
     &:active { transform: scale(0.95); }

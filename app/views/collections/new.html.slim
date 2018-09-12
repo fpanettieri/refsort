@@ -3,11 +3,9 @@
 
 .container
   .halves#new-collection
-    .half
+    .half.half-left
       section.section
         h1.title Create a collection
         p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
         = form_with url: "/collections", local: true, method: :post, multipart: true do |form|
           = render 'form'
-
-    .half.is-hidden-mobile
