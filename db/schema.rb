@@ -34,10 +34,9 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.string "slug"
     t.string "secret"
     t.string "name"
-    t.text "description"
-    t.integer "votes"
-    t.integer "views"
-    t.float "score"
+    t.integer "votes", default: 0
+    t.integer "views", default: 0
+    t.float "score", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "img_file_name"
