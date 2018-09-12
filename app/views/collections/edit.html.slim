@@ -6,16 +6,8 @@
         p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
         = form_with url: "/collections/#{@collection.secret}", method: :put, local: true, multipart: true do |form|
           = render 'form'
-
         hr
-        label.label Delete this collection
-        .field.has-addons
-          .control.is-expanded
-            input.input name="del-confirm" type="text" placeholder="Collection name"
-            p.help
-            p.help Once you delete a collection, there is no going back!
-          .control
-            #delete-btn.button.is-danger Delete
+        = render 'delete'
 
     .half.half-right.separator
       = render 'items'
