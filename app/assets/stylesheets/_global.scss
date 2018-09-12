@@ -15,7 +15,7 @@ hr {
 
 .button {
   border-radius: 0;
-  &.is-success { background-color: #00D9C0; }
+  &.is-primary { background-color: #00D9C0; }
   &.is-danger { background-color: #FF4365; }
 }
 
@@ -24,16 +24,14 @@ hr {
   box-shadow: none;
 }
 
-.navbar {
-  border-bottom: 1px solid #ccc;
-}
-
-.section {
-  padding: 1.5rem;
+.navbar { border-bottom: 1px solid #ccc; }
+.section { padding: 1.5rem; }
+.card {
+  box-shadow: none;
+  // border: 1px solid #dbdbdb;
 }
 
 .file-cta { border-radius: 0; }
-
 .is-relative { position: relative; }
 
 // Layout
@@ -60,7 +58,7 @@ hr {
     }
 
     &.half-left .section { padding: 1.5rem 3rem 1.5rem 0; }
-    &.half-right .section { padding: 1.5rem 0 1.5rem 3rem; }
+    &.half-right .section { padding: 1.5rem 1px 1.5rem 3rem; }
   }
 }
 
@@ -97,6 +95,7 @@ hr {
 }
 
 // Flex utils
+.flex { display: flex; }
 .flex-force { display: flex !important; }
 .flex-grow { flex-grow: 1; }
 .flex-wrap { flex-wrap: wrap; }

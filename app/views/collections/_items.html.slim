@@ -1,0 +1,17 @@
+section.section
+  .flex
+    h1.title Items
+    .flex-grow
+    .button.is-primary + New
+
+  .columns.flex-wrap
+    - 5.times do
+      .column.is-6
+        .card
+          .card-image
+            figure.image.is-4by3
+              img src="https://bulma.io/images/placeholders/1280x960.png"
+
+          footer.card-footer
+            a.card-footer-item href="#" class="card-footer-item" Save
+            a.card-footer-item href="#" class="card-footer-item" Edit

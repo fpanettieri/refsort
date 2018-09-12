@@ -1,5 +1,5 @@
-.container
-  .halves#new-collection
+.container#new-collection
+  .halves
     .half.half-left
       section.section
         h1.title Edit collection
@@ -18,18 +18,7 @@
             #delete-btn.button.is-danger Delete
 
     .half.half-right.separator
-      section.section
-        h1.title Items
-        p.subtitle.has-text-grey.is-hidden-mobile Status:
-
-        .columns.flex-wrap
-          - 5.times do
-            .column.is-3
-              .card.collection.new data-href="/collections/new"
-                .card-bg.is-overlay
-                .card-content.is-relative
-                  .title + New
-                  /.description Each collection contains a variable number of items with shared significance that needs to be sorted.
+      = render 'items'
 
 javascript:
   $(() => {
