@@ -94,6 +94,44 @@ hr {
   }
 }
 
+.magic-back-btn {
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  z-index: 100;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .1s all ease-out;
+  user-select: none;
+
+  &:active {
+    background-color: #00D9C0;
+    color: #fff;
+    border-color: #fff;
+    transform: scale(0.95);
+  }
+}
+
+@media (min-width: 769px) {
+  .magic-back-btn {
+    top: 1.75rem;
+    right: 2rem;
+
+    &:hover {
+      color: #00D9C0;
+      border-color: #00D9C0;
+      transform: scale(1.1);
+    }
+  }
+}
+
 // Flex utils
 .flex { display: flex; }
 .flex-force { display: flex !important; }
