@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2018_09_03_153048) do
 
   create_table "collections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.string "slug"
     t.string "secret"
+    t.string "name"
     t.text "description"
     t.boolean "priv", default: false
     t.boolean "approved", default: true
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.integer "collection_id"
     t.string "slug"
     t.string "secret"
+    t.string "name"
+    t.text "description"
     t.integer "votes"
     t.integer "views"
     t.float "score"
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 2018_09_03_153048) do
     t.bigint "img_file_size"
     t.datetime "img_updated_at"
     t.index ["collection_id"], name: "index_items_on_collection_id"
+    t.index ["secret"], name: "index_items_on_secret"
+    t.index ["slug"], name: "index_items_on_slug"
   end
 
 end

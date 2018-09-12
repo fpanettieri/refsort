@@ -17,6 +17,19 @@ javascript:
         window.location = $(this).data('href');
       }
     }
-    
+
     links.on('click', followLink);
   });
+
+  // File Picker
+  $(() => {
+    let $file_picker = $('#file-picker');
+    let $file_name = $('#file-name');
+
+    function onFilePicked() {
+      if(this.files.length < 1) { return; }
+      $file_name.html(this.files[0].name);
+    }
+
+    $file_picker.on('change', onFilePicked);
+  })

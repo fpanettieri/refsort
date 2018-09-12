@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :check_collection
   before_action :by_secret, only: [:edit, :update, :destroy]
 
   def new
@@ -31,8 +32,11 @@ class ItemsController < ApplicationController
     def by_secret
       @collection = Collection.find_by(secret: params[:collection_id])
       redirect_to root_path if @collection.nil?
+    end
 
-
+    def by_secret
+      @item = Item.find_by(secret: params[:id])
+      redirect_to edit_collection_path(@collection.secret) if @item.nil?
     end
 
     def item_params
