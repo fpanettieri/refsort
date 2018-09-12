@@ -70,6 +70,7 @@
     .collection {
       height: 300px;
       margin-bottom: 2rem;
+
       &:hover, &:focus {
         .card-bg { opacity: 0; }
         .description { opacity: 1; }
