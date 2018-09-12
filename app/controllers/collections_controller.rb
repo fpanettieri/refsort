@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   before_action :set_back, only: [:new, :edit, :show]
-  before_action :by_slug, only: [:show, :results]
-  before_action :by_secret, only: [:edit, :update, :destroy]
+  before_action :by_slug, only: [:show]
+  before_action :by_secret, only: [:edit, :update, :destroy, :results]
 
   def index
     @collections = Collection.where(priv: false, approved: true)
