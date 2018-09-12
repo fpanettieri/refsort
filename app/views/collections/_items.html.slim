@@ -10,14 +10,29 @@ section.section
       .title.is-5 Your collection is empty
       .subtitle.is-6 Let's add some items!
 
-  .columns.flex-wrap
+  .items
     - for item in @collection.items
-      .column.is-6
-        .card
-          .card-image
-            figure.image.is-4by3
-              img src=item.img.url(:medium)
+      .item.level
+        .level-item
+          = image_tag item.img.url(:thumb), class: 'image is-64x64'
 
-          footer.card-footer
-            a.card-footer-item href="#" class="card-footer-item" Save
-            a.card-footer-item href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret) class="card-footer-item" Edit
+        .level-item.has-text-centered
+          div
+            p.heading views
+            p.title = item.views
+
+        .level-item.has-text-centered
+          div
+            p.heading votes
+            p.title = item.votes
+
+        .level-item.has-text-centered
+          div
+            p.heading score
+            p.title = item.score
+
+        .level-item.has-text-centered
+          a.button href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret)
+            span.icon
+              i.far.fa-edit
+            span Edit
