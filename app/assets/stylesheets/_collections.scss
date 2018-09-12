@@ -46,6 +46,9 @@
     .item.level {
       border: 1px solid #dbdbdb;
       padding: .5rem 0;
+      cursor: pointer;
+      &:hover { background-color: #f9f9f9; }
+      &:active { background-color: #f2f2f2; }
     }
 
     .item-img {

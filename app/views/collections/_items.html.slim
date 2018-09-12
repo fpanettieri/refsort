@@ -12,27 +12,29 @@ section.section
 
   .items
     - for item in @collection.items
-      .item.level
+      .item.level data-href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret)
         .level-item
           .item-img style="background-image: url(#{item.img.url(:thumb)})"
 
         .level-item.has-text-centered
           div
             p.heading views
-            p.title = item.views
+            p.title = (rand(1..100)).to_s
+            /#item.views
 
         .level-item.has-text-centered
           div
             p.heading votes
-            p.title = item.votes
+            p.title = (rand(1..100)).to_s
+            /#item.votes
 
         .level-item.has-text-centered
           div
             p.heading score
-            p.title = item.score
+            p.title = '%.1f' % (rand(1..100) / 10.0)
+            /#item.score
 
         .level-item.has-text-centered
-          a.button.is-white href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret)
-            span.icon
-              i.far.fa-edit
-            span Edit
+          span.icon
+            i.far.fa-edit
+          span Edit
