@@ -1,0 +1,37 @@
+.container#new-collection
+  .halves
+    .half.half-left
+      section.section
+        h1.title Edit collection
+        p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
+        = form_with url: "/collections/#{@collection.secret}", method: :put, local: true, multipart: true do |form|
+          = render 'form'
+
+        hr
+        label.label Delete this collection
+        .field.has-addons
+          .control.is-expanded
+            input.input name="del-confirm" type="text" placeholder="Collection name"
+            p.help
+            p.help Once you delete a collection, there is no going back!
+          .control
+            #delete-btn.button.is-danger Delete
+
+    .half.half-right.separator
+      = render 'items'
+
+javascript:
+  $(() => {
+    let $name = $('input[name="name"]');
+
+    let $delete = $('#delete-btn');
+    let $delete_confirm = $('input[name="del-confirm"]');
+
+    function onDelete() {
+      if ($delete_confirm.val() != $name.val()) { return alert("Please type the name of the collection to confirm."); }
+      if (!confirm("Are you absolutely sure? This action cannot be undone.")){ return; }
+      xhr_delete("/collections/#{@collection.secret}", () => { window.location = "#{root_path}"; });
+    }
+
+    $delete.on('click', onDelete);
+  })

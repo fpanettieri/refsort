@@ -1,0 +1,11 @@
+.splash.is-hidden-mobile style="background-image: url(#{asset_path 'splash.jpg'})"
+  .credit.is-unselectable data-href='https://unsplash.com/photos/VSo5d9wlT7s' data-target='_blank' Photo by Martino Pietropoli on Unsplash
+
+.container
+  .halves#new-collection
+    .half.half-left
+      section.section
+        h1.title Create a collection
+        p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
+        = form_with url: "/collections", local: true, method: :post, multipart: true do |form|
+          = render 'form'

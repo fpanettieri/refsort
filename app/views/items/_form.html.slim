@@ -1,0 +1,60 @@
+.field
+  label.label Name
+  .control
+    input.input name="name" type="text" placeholder="Collection Name (max 40 chars)" maxlength="40" required="true" value=@collection.name
+
+.field
+  label.label Description
+  .control
+    input.input name="description" type="text" placeholder="What is this collection about?" maxlength="100" required="true" value=@collection.description
+
+.field
+  label.label Image
+  .file.has-name.is-fullwidth
+    label.file-label
+      input#file-picker.file-input name="img" type="file" accept="image/png,image/jpeg"
+      span.file-cta
+        span.file-icon
+          i.fas.fa-upload
+        span.file-label Choose a file…
+      span#file-name.file-name Upload a file from your computer
+
+- if @collection.new_record?
+  .field
+    label.label Email
+    .control
+      input.input name="email" type="email" placeholder="Owner's email" required="true"
+      p.help I will email you the link to manage this collection. <strong>It won't be stored</strong>. (I hate spam too)
+
+.field
+  label.label Is this a private collection?
+  .control
+    label.radio
+      = radio_button_tag 'priv', 'false', !@collection.priv
+      span  No
+    label.radio
+      = radio_button_tag 'priv', 'true', @collection.priv
+      span  Yes
+
+- if @collection.new_record?
+  .field
+    = recaptcha_tags
+
+.field.is-grouped
+  .control
+    button.button.is-primary type="submit" Save
+  .control
+    a.button.is-text href=root_path Back
+
+javascript:
+  $(() => {
+    let $file_picker = $('#file-picker');
+    let $file_name = $('#file-name');
+
+    function onFilePicked() {
+      if(this.files.length < 1) { return; }
+      $file_name.html(this.files[0].name);
+    }
+
+    $file_picker.on('change', onFilePicked);
+  })
