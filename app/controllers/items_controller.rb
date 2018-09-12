@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   end
 
   private
-    def by_secret
+    def check_collection
       @collection = Collection.find_by(secret: params[:collection_id])
       redirect_to root_path if @collection.nil?
     end
