@@ -28,6 +28,9 @@ class CollectionsController < ApplicationController
 
   def vote
     # TODO: implement this
+    # fetch A & B
+    # increment view counters
+    # increments votes on winer, redirect to show
   end
 
   def edit
