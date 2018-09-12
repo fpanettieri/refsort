@@ -5,10 +5,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :slug, index: true
       t.string :secret, index: true
       t.string :name
-      t.text :description
-      t.integer :votes
-      t.integer :views
-      t.float :score
+      t.integer :votes, default: 0
+      t.integer :views, default: 0
+      t.float :score, default: 0
 
       t.timestamps
     end
