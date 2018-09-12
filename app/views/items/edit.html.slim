@@ -1,6 +1,3 @@
-.splash.is-hidden-mobile style="background-image: url(#{asset_path 'splash.jpg'})"
-  .credit.is-unselectable data-href='https://unsplash.com/photos/VSo5d9wlT7s' data-target='_blank' Photo by Martino Pietropoli on Unsplash
-
 .container
   .halves#new-collection
     .half.half-left
@@ -19,6 +16,11 @@
           .control
             #delete-btn.button.is-danger Delete
 
+    .half.half-right.separator
+      section.section
+        h1.title Preview
+        = image_tag @item.img.url(:medium)
+        p.help = @item.img_file_name
 
 javascript:
   $(() => {
