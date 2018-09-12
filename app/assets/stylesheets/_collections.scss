@@ -41,25 +41,6 @@
 
 #new-collection {
   .field:not(:last-child) { margin-bottom: 1.5rem; }
-  .splash-bg {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .credit {
-    position: absolute;
-    bottom: .5rem;
-    right: .5rem;
-    background-color: #222;
-    padding: .5rem 1rem;
-    color: #fff;
-    cursor: pointer;
-    font-size: .8rem;
-    transition: all .1s ease-out;
-
-    &:hover { transform: scale(1.05); }
-    &:active { transform: scale(0.95); }
-  }
 }
 
 @media (min-width: 769px) {

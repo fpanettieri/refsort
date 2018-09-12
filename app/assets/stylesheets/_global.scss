@@ -24,6 +24,14 @@ hr {
   box-shadow: none;
 }
 
+.navbar {
+  border-bottom: 1px solid #ccc;
+}
+
+.section {
+  padding: 1.5rem;
+}
+
 .file-cta { border-radius: 0; }
 
 .is-relative { position: relative; }
@@ -56,15 +64,38 @@ hr {
   }
 }
 
-
 .brand-logo {
   font-size: 1.5rem;
   margin-left: .5rem;
   font-weight: 200;
 }
 
-.navbar { border-bottom: 1px solid #ccc; }
-.section { padding: 1.5rem; }
+.splash {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .credit {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    background-color: #222;
+    padding: .5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: .8rem;
+    transition: all .1s ease-out;
+    z-index: 100;
+
+    &:hover { transform: scale(1.05); }
+    &:active { transform: scale(0.95); }
+  }
+}
 
 // Flex utils
 .flex-force { display: flex !important; }
