@@ -11,7 +11,7 @@ section#collections.section
 
       - @collections.each do |collection|
         .column.is-3
-          .card.collection data-href="/collections/#{collection.slug}" data-target='_blank'
+          .card.collection data-href="/collections/#{collection.slug}"
             .card-bg.is-overlay style="background-image: url(#{collection.img.url(:medium)})"
             .card-content.is-relative
               .title = collection.name

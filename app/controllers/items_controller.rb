@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :check_collection
+  before_action :set_back, only: [:new, :edit]
   before_action :by_secret, only: [:edit, :update, :destroy]
 
   def new
@@ -33,6 +34,10 @@ class ItemsController < ApplicationController
     def check_collection
       @collection = Collection.find_by(secret: params[:collection_id])
       redirect_to root_path if @collection.nil?
+    end
+
+    def set_back
+      @back_url = edit_collection_path(@collection.secret)
     end
 
     def by_secret

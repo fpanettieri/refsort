@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
-  before_action :set_back, only: [:new, :edit]
-  before_action :by_slug, only: [:show]
+  before_action :set_back, only: [:new, :edit, :show, :results]
+  before_action :by_slug, only: [:show, :results]
   before_action :by_secret, only: [:edit, :update, :destroy]
 
   def index
@@ -22,7 +22,9 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    # TODO: vote or results
+  end
+
+  def results
   end
 
   def edit
