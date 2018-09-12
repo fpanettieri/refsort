@@ -14,7 +14,7 @@ section.section
     - for item in @collection.items
       .item.level
         .level-item
-          = image_tag item.img.url(:thumb), class: 'image is-64x64'
+          .item-img style="background-image: url(#{item.img.url(:thumb)})"
 
         .level-item.has-text-centered
           div

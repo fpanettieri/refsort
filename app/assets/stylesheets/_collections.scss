@@ -41,6 +41,21 @@
 
 #edit-collection {
   .field:not(:last-child) { margin-bottom: 1.5rem; }
+
+  .items {
+    .item.level {
+      border: 1px solid #dbdbdb;
+      padding: .5rem 0;
+    }
+
+    .item-img {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 64px;
+      height: 64px;
+    }
+  }
 }
 
 @media (min-width: 769px) {
