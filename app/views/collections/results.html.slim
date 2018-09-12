@@ -2,13 +2,9 @@ order(score: :desc)
 
 section#collections.section
   .container
-    .level
-      .level-left
-        div
-          h1.title Results
-          p.subtitle = @collection.name
-      .level-right
-        h1.title = "Order: %.1f" % @collection.calc_order
+    h1.title = @collection.name
+    .subtitle.is-dark = "Order: %.1f" % @collection.calc_order
+
     .columns.flex-wrap
       - @collection.items.order(score: :desc).each do |item|
         .column.is-3
