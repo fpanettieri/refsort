@@ -57,7 +57,7 @@ hr {
       border-top: none;
     }
 
-    &.half-left .section { padding: 1.5rem 3rem 1.5rem 0; }
+    &.half-left .section { padding: 1.5rem 3rem 1.5rem 1px; }
     &.half-right .section { padding: 1.5rem 1px 1.5rem 3rem; }
   }
 }
