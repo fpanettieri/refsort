@@ -19,20 +19,17 @@ section.section
         .level-item.has-text-centered
           div
             p.heading views
-            p.title = (rand(1..100)).to_s
-            /#item.views
+            p.title = item.views
 
         .level-item.has-text-centered
           div
             p.heading votes
-            p.title = (rand(1..100)).to_s
-            /#item.votes
+            p.title = item.votes
 
         .level-item.has-text-centered
           div
             p.heading score
-            p.title = '%.1f' % (rand(1..100) / 10.0)
-            /#item.score
+            p.title = '%.1f' % item.score
 
         .level-item.has-text-centered.is-hidden-mobile
           span.icon
