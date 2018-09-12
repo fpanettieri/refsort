@@ -26,7 +26,12 @@ class CollectionsController < ApplicationController
     @b = pick_rand(@collection.items.where.not(id: @a.id))
   end
 
+  def vote
+    # TODO: implement this
+  end
+
   def results
+    @order = @collection.calc_order
   end
 
   def edit
