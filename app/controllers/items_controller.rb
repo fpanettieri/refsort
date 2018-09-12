@@ -29,11 +29,13 @@ class ItemsController < ApplicationController
 
   private
     def by_secret
-      @collection = Collection.find_by(secret: params[:id])
+      @collection = Collection.find_by(secret: params[:collection_id])
       redirect_to root_path if @collection.nil?
+
+
     end
 
     def item_params
-      params.permit(:name, :img)
+      params.permit(:name, :description, :img)
     end
 end
