@@ -32,7 +32,9 @@ javascript:
     function onDelete() {
       if ($delete_confirm.val() != $name.val()) { return alert("Please type the name of the item to confirm."); }
       if (!confirm("Are you absolutely sure? This action cannot be undone.")){ return; }
-      xhr_delete("/collections/#{@collection.secret}", () => { window.location = "#{root_path}"; });
+      xhr_delete("/collections/#{@collection.secret/items/#{@item.secret}", () => {
+        window.location = "#{edit_collection_path(@collection.secret)}"; 
+      });
     }
 
     $delete.on('click', onDelete);
