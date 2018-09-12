@@ -6,6 +6,5 @@
     .half.half-left
       section.section
         h1.title Add item to collection
-        p.subtitle.has-text-grey = @collection.name
         = form_with url: "/collections/#{@collection.secret}/items", local: true, method: :post, multipart: true do |form|
           = render 'form'

@@ -1,24 +1,24 @@
-.container#new-collection
-  .halves
+.splash.is-hidden-mobile style="background-image: url(#{asset_path 'splash.jpg'})"
+  .credit.is-unselectable data-href='https://unsplash.com/photos/VSo5d9wlT7s' data-target='_blank' Photo by Martino Pietropoli on Unsplash
+
+.container
+  .halves#new-collection
     .half.half-left
       section.section
-        h1.title Edit collection
-        p.subtitle.has-text-grey.is-hidden-mobile A set of items that needs to be sorted.
-        = form_with url: "/collections/#{@collection.secret}", method: :put, local: true, multipart: true do |form|
+        h1.title Edit item
+        = form_with url: "/collections/#{@collection.secret}/items/#{@item.secret}", local: true, method: :put, multipart: true do |form|
           = render 'form'
 
         hr
-        label.label Delete this collection
+        label.label Delete this item
         .field.has-addons
           .control.is-expanded
-            input.input name="del-confirm" type="text" placeholder="Collection name"
+            input.input name="del-confirm" type="text" placeholder="Item name"
             p.help
-            p.help Once you delete a collection, there is no going back!
+            p.help Once you delete an item, there is no going back!
           .control
             #delete-btn.button.is-danger Delete
 
-    .half.half-right.separator
-      = render 'items'
 
 javascript:
   $(() => {
@@ -28,7 +28,7 @@ javascript:
     let $delete_confirm = $('input[name="del-confirm"]');
 
     function onDelete() {
-      if ($delete_confirm.val() != $name.val()) { return alert("Please type the name of the collection to confirm."); }
+      if ($delete_confirm.val() != $name.val()) { return alert("Please type the name of the item to confirm."); }
       if (!confirm("Are you absolutely sure? This action cannot be undone.")){ return; }
       xhr_delete("/collections/#{@collection.secret}", () => { window.location = "#{root_path}"; });
     }

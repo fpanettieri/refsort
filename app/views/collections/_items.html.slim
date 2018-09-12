@@ -21,4 +21,4 @@ section.section
 
             footer.card-footer
               a.card-footer-item href="#" class="card-footer-item" Save
-              a.card-footer-item href="#" class="card-footer-item" Edit
+              a.card-footer-item href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret) class="card-footer-item" Edit
