@@ -9,7 +9,7 @@ section#collections.section
             .title + New
             .description Each collection contains a variable number of items with shared significance that needs to be sorted.
 
-      - @collections.each do |collection|
+      - @collections.order(updated_at: :desc).each do |collection|
         .column.is-3
           a.card.collection href="/collections/#{collection.slug}"
             .card-bg.is-overlay style="background-image: url(#{collection.img.url(:medium)})"

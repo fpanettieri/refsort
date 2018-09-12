@@ -2,7 +2,13 @@ order(score: :desc)
 
 section#collections.section
   .container
-    h1.title Results
+    .level
+      .level-left
+        div
+          h1.title Results
+          p.subtitle = @collection.name
+      .level-right
+        h1.title Order: 0.0
     .columns.flex-wrap
       - @collection.items.order(score: :desc).each do |item|
         .column.is-3
