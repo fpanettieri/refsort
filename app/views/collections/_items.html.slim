@@ -2,6 +2,8 @@ section.section
   .flex
     h1.title Items
     .flex-grow
+    a.button Results
+    span &nbsp;&nbsp;
     a.button.is-primary href=new_collection_item_path(collection_id: @collection.secret) + New
 
   - if @collection.items.empty?

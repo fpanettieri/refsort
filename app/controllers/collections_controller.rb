@@ -1,4 +1,6 @@
 class CollectionsController < ApplicationController
+  before_action :set_back, only: [:new, :edit]
+  before_action :by_slug, only: [:show]
   before_action :by_secret, only: [:edit, :update, :destroy]
 
   def index
@@ -20,11 +22,11 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    @collection = Collection.find_by(slug: params[:slug])
-    redirect_to root_path if @collection.nil?
+    # TODO: vote or results
   end
 
   def edit
+    @back_url = root_path
   end
 
   def update
@@ -38,6 +40,15 @@ class CollectionsController < ApplicationController
   end
 
   private
+    def set_back
+      @back_url = root_path
+    end
+
+    def by_slug
+      @collection = Collection.find_by(slug: params[:id])
+      redirect_to root_path if @collection.nil?
+    end
+
     def by_secret
       @collection = Collection.find_by(secret: params[:id])
       redirect_to root_path if @collection.nil?

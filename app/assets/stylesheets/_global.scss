@@ -25,6 +25,12 @@ hr {
 }
 
 .navbar { border-bottom: 1px solid #ccc; }
+.navbar-item.back-btn { padding-left: 0; }
+
+@media (min-width: 769px) {
+  .navbar-item.back-btn { margin-right: -.75rem; }
+}
+
 .section { padding: 1.5rem; }
 .card {
   box-shadow: none;

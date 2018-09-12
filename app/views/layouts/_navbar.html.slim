@@ -11,3 +11,7 @@ nav.navbar
       a.button.is-white href="https://twitter.com/RefSort" target="_blank"
         span.icon
           i.fab.fa-twitter
+
+    - if @back_url
+      .navbar-item.back-btn
+        a.button href=@back_url Back
