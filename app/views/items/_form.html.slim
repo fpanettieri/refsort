@@ -15,14 +15,8 @@
     input.input name="name" type="text" placeholder="Item Name (max 40 chars)" maxlength="40" value=@item.name
     p.help Optional
 
-.field
-  label.label Description
-  .control
-    input.input name="description" type="text" placeholder="What is this item?" maxlength="100" value=@item.description
-    p.help Optional
-
 .field.is-grouped
   .control
     button.button.is-primary type="submit" Save
   .control
-    a.button.is-text href=root_path Back
+    a.button.is-text href=edit_collection_path(@collection.secret) Back
