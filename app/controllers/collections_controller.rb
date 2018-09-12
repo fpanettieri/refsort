@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action :set_back, only: [:new, :edit, :show, :results]
+  before_action :set_back, only: [:new, :edit, :show]
   before_action :by_slug, only: [:show, :results]
   before_action :by_secret, only: [:edit, :update, :destroy]
 
@@ -30,17 +30,17 @@ class CollectionsController < ApplicationController
     # TODO: implement this
   end
 
-  def results
-    @order = @collection.calc_order
-  end
-
   def edit
-    @back_url = root_path
   end
 
   def update
     @collection.update(collection_params)
     redirect_to edit_collection_path(@collection.secret), notice: 'Collection updated.'
+  end
+
+  def results
+    @order = @collection.calc_order
+    @back_url = edit_collection_path(@collection.secret)
   end
 
   def destroy
