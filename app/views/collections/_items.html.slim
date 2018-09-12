@@ -11,14 +11,13 @@ section.section
       .subtitle.is-6 Let's add some items!
 
   .columns.flex-wrap
-    - 5.times do
-      - for item in @collection.items
-        .column.is-6
-          .card
-            .card-image
-              figure.image.is-4by3
-                img src=item.img.url(:medium)
+    - for item in @collection.items
+      .column.is-6
+        .card
+          .card-image
+            figure.image.is-4by3
+              img src=item.img.url(:medium)
 
-            footer.card-footer
-              a.card-footer-item href="#" class="card-footer-item" Save
-              a.card-footer-item href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret) class="card-footer-item" Edit
+          footer.card-footer
+            a.card-footer-item href="#" class="card-footer-item" Save
+            a.card-footer-item href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret) class="card-footer-item" Edit
