@@ -10,7 +10,6 @@
     user-select: none;
 
     &.new { background-color: #00D9C0; }
-    &:hover, &:focus { .card-bg { opacity: 0; } }
     &:active { transform: scale(0.95); }
 
     .card-bg {
@@ -71,7 +70,10 @@
     .collection {
       height: 300px;
       margin-bottom: 2rem;
-      &:hover, &:focus { .description { opacity: 1; } }
+      &:hover, &:focus {
+        .card-bg { opacity: 0; }
+        .description { opacity: 1; }
+      }
 
       .description { display: block; }
     }

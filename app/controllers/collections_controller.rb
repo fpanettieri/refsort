@@ -22,6 +22,8 @@ class CollectionsController < ApplicationController
   end
 
   def show
+    @a = pick_rand(@collection.items)
+    @b = pick_rand(@collection.items.where.not(id: @a.id))
   end
 
   def results
@@ -58,5 +60,10 @@ class CollectionsController < ApplicationController
 
     def collection_params
       params.permit(:name, :description, :priv, :img)
+    end
+
+    def pick_rand(items)
+      min = items.minimum(:views)
+      items.where(views: min).order("RAND()").limit(1).first
     end
 end

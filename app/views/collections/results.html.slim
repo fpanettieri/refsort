@@ -1,0 +1,12 @@
+order(score: :desc)
+
+section#collections.section
+  .container
+    h1.title Results
+    .columns.flex-wrap
+      - @collection.items.order(score: :desc).each do |item|
+        .column.is-3
+          a.card.collection href=item.img.url(:large) target="_blank"
+            .card-bg.is-overlay style="background-image: url(#{item.img.url(:medium)})"
+            .card-content.is-relative
+              .title = item.score
