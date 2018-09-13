@@ -98,3 +98,23 @@
     .items .title { font-size: 2rem; }
   }
 }
+
+#vote-collection {
+  .options {
+    display: flex;
+    background-color: #f0f;
+  }
+
+  .option {
+    background-color: #ff0;
+    padding: 3rem;
+    height: calc(80vh - 3.25rem);
+  }
+
+  .option-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+}
