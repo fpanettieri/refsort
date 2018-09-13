@@ -12,5 +12,27 @@ section#vote-collection.section
         h1.title.is-relative B
 
     .picker.buttons.has-addons
-      a.button Vote A
-      a.button Vote B
+      .button.vote-btn.vote-a data-slug=@a.slug Vote A
+      .button.vote-btn.vote-b data-slug=@a.slug Vote B
+
+javascript:
+  $(function() {
+      let $view = $('#vote-collection');
+      let $btns = $view.find('.vote-btn');
+      let $a = $view.find('.vote-a');
+      let $b = $view.find('.vote-b');
+
+      function onVote() {
+        let $vote = $(this);
+
+        let data = {
+          a: $a.data('slug'),
+          b: $b.data('slug'),
+          v: $vote.data('slug'),
+        }
+
+        xhr_post("/collections/#{@collection.slug}/vote", data, () => { window.location.reload(true); });
+      }
+
+      $btns.on('click', onVote);
+  })

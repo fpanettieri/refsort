@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :set_back, only: [:new, :edit, :show]
-  before_action :by_slug, only: [:show]
+  before_action :by_slug, only: [:show, :vote]
   before_action :by_secret, only: [:edit, :update, :destroy, :results]
 
   def index
@@ -31,6 +31,7 @@ class CollectionsController < ApplicationController
     # fetch A & B
     # increment view counters
     # increments votes on winer, redirect to show
+    @a = pick_item(@collection.items, )
   end
 
   def edit
@@ -57,12 +58,12 @@ class CollectionsController < ApplicationController
     end
 
     def by_slug
-      @collection = Collection.find_by(slug: params[:id])
+      @collection = Collection.includes(:items).find_by(slug: params[:id])
       redirect_to root_path if @collection.nil?
     end
 
     def by_secret
-      @collection = Collection.find_by(secret: params[:id])
+      @collection = Collection.includes(:items).find_by(secret: params[:id])
       redirect_to root_path if @collection.nil?
     end
 
@@ -73,5 +74,10 @@ class CollectionsController < ApplicationController
     def pick_rand(items)
       min = items.minimum(:views)
       items.where(views: min).order("RAND()").limit(1).first
+    end
+
+    def pick_item(items, slug)
+      item = items.where(slug: slug).first
+      redirect_to root_path if item.nil?
     end
 end
