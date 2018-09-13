@@ -103,13 +103,14 @@
   .title { margin-bottom: 1rem; }
 
   .options {
-    background-color: #f0f;
+    // background-color: #f0f;
     display: flex;
     flex-direction: column;
   }
 
   .option {
-    background-color: #ff0;
+    //background-color: #ff0;
+    background-color: #222;
     height: 25vh;
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -122,11 +123,10 @@
     }
   }
 
-  .option-img {
-    background-position: center;
+  .option-bg {
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: contain;
-
+    background-position: center;
   }
 
   .picker {
@@ -144,7 +144,15 @@
     font-weight: 600;
     transition: .1s all ease-out;
 
-    &:hover { transform: scale(1.05); }
+
     &:active { transform: scale(0.95); }
+  }
+}
+
+@media (min-width: 1024px) {
+  #vote-collection {
+    .button {
+      &:hover { transform: scale(1.05); }
+    }
   }
 }

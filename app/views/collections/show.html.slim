@@ -1,13 +1,16 @@
 section#vote-collection.section
   .container
     h1.title = @collection.name
+
     .options
-      .option
-        .option-img style="background-image: url(#{@a.img.url(:large)})"
-        h1.title A
-      .option
-        .option-img style="background-image: url(#{@a.img.url(:large)})"
-        h1.title B
+      a.option.is-relative href=@a.img.url(:large)
+        .option-bg.is-overlay style="background-image: url(#{@a.img.url(:medium)})"
+        h1.title.is-relative A
+
+      a.option.is-relative href=@b.img.url(:large)
+        .option-bg.is-overlay style="background-image: url(#{@b.img.url(:medium)})"
+        h1.title.is-relative B
+
     .picker.buttons.has-addons
       a.button Option A
       a.button Option B
