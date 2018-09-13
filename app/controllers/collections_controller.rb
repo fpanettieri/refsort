@@ -16,6 +16,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     if verify_recaptcha(model: @collection) && @collection.save
       CollectionMailer.new_collection_email(@collection.name, @collection.description, @collection.slug, @collection.secret, params[:email]).deliver!
+      @collection.tweet! unless @collection.priv
       redirect_to edit_collection_path(@collection.secret)
     else
       render "new"

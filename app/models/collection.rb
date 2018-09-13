@@ -15,4 +15,13 @@ class Collection < ApplicationRecord
     s = items.sum(:votes)
     s.fdiv(2).fdiv(c * c)
   end
+
+  def tweet!
+    @@client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key    = ENV['TWITTER_KEY']
+      config.consumer_secret = ENV['TWITTER_SECRET']
+    end
+    @url = "https://refsort.com/#{self.slug}"
+    @@client.update_with_media("New Collection: #{self.name} \n#{self.description}\n #{@url}", self.img.url(:medium))
+  end
 end

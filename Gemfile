@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'slim', '~> 4.0.1'
 gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 gem 'turbolinks', '~> 5'
+gem 'twitter', '~> 6.2'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
