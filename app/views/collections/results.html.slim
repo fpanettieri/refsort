@@ -1,7 +1,7 @@
 section#collections.section
   .container
     h1.title = @collection.name
-    .subtitle = "Order: %.1f - #{humanize_order(@order)}" % @order
+    .subtitle = "Order: %.2f (#{humanize_order(@order)})" % @order
     .columns.flex-wrap
       - @collection.items.order(score: :desc).each do |item|
         .column.is-3

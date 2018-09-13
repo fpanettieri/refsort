@@ -13,6 +13,6 @@ class Collection < ApplicationRecord
   def calc_order
     c = items.count
     s = items.sum(:votes)
-    (s.fdiv(2)) / (c * c)
+    s.fdiv(2).fdiv(c * c)
   end
 end
