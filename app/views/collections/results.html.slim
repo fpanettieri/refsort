@@ -8,4 +8,4 @@ section#collections.section
           a.card.collection href=item.img.url(:large) target="_blank"
             .card-bg.is-overlay style="background-image: url(#{item.img.url(:medium)})"
             .card-content.is-relative
-              .title = item.score
+              .title = "%.1f" % item.score
