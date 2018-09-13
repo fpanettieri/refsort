@@ -45,6 +45,6 @@ javascript:
         else if (ev.which == 66) { vote($b); }
       }
 
-      $btns.on('click', () => { vote($(this)); });
+      $btns.on('click', function() { vote($(this)); });
       $body.on('keydown', onKeyPress);
   })
