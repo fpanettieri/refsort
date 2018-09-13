@@ -1,19 +1,26 @@
 section#vote-collection.section
   .container
     h1.title = @collection.name
-    .subtitle = "Order: %.2f (#{humanize_order(@order)})" % @order
-    .options
-      a.option.is-relative href=@a.img.url(:large) target="_blank"
-        .option-bg.is-overlay style="background-image: url(#{@a.img.url(:large)})"
-        h1.title.is-relative A
+    - if @a.nil? or b.nil?
+      .empty.has-text-centered
+        = image_tag "empty_box.jpg"
+        .title.is-5 This collection is empty
+        .subtitle.is-6 Add some items first!
 
-      a.option.is-relative href=@b.img.url(:large) target="_blank"
-        .option-bg.is-overlay style="background-image: url(#{@b.img.url(:large)})"
-        h1.title.is-relative B
+    - else
+      .subtitle = "Order: %.2f (#{humanize_order(@order)})" % @order
+      .options
+        a.option.is-relative href=@a.img.url(:large) target="_blank"
+          .option-bg.is-overlay style="background-image: url(#{@a.img.url(:large)})"
+          h1.title.is-relative A
 
-    .picker.buttons.has-addons
-      .button.vote-btn.vote-a data-slug=@a.slug Vote A
-      .button.vote-btn.vote-b data-slug=@b.slug Vote B
+        a.option.is-relative href=@b.img.url(:large) target="_blank"
+          .option-bg.is-overlay style="background-image: url(#{@b.img.url(:large)})"
+          h1.title.is-relative B
+
+      .picker.buttons.has-addons
+        .button.vote-btn.vote-a data-slug=@a.slug Vote A
+        .button.vote-btn.vote-b data-slug=@b.slug Vote B
 
 javascript:
   $(function() {

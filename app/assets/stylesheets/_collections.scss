@@ -108,17 +108,12 @@
   }
 
   .options {
-    // background-color: #f0f;
     display: flex;
-    flex-direction: column;
-
-    // new
     flex-grow: 1;
     justify-content: space-evenly;
   }
 
   .option {
-    //background-color: #ff0;
     background-color: #222;
     height: 25vh;
     margin-bottom: 1.5rem;
@@ -168,6 +163,8 @@
 @media (min-width: 1024px) {
   #vote-collection {
     .container { min-height: 0; }
+
+    .empty img { max-width: 50vw; }
 
     .options {
       flex-direction: row;
