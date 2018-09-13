@@ -11,6 +11,6 @@ class Item < ApplicationRecord
 
   private
     def update_score
-      self.score = (self.votes / self.views) * 10
+      self.score = self.votes.fdiv(self.views.to_f) * 10.0
     end
 end
