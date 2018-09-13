@@ -24,7 +24,7 @@ class CollectionsController < ApplicationController
 
   def show
     @a = pick_rand(@collection.items)
-    @b = pick_rand(@collection.items.where.not(id: @a.id))
+    @b = pick_rand(@collection.items.where.not(id: @a.try(:id)))
   end
 
   def vote
