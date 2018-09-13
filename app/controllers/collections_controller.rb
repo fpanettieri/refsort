@@ -27,11 +27,17 @@ class CollectionsController < ApplicationController
   end
 
   def vote
-    # TODO: implement this
-    # fetch A & B
-    # increment view counters
-    # increments votes on winer, redirect to show
-    @a = pick_item(@collection.items, )
+    byebug
+
+    @a = pick_item(@collection.items, params[:a])
+    @b = pick_item(@collection.items, params[:b])
+    @voted = @a.slug.eql?(params[:v]) ? @a : @b
+
+    @a.increment(:views)
+    @b.increment(:views)
+    @voted.increment(:votes)
+
+    head (@a.save && @b.save) ? 200 : 500
   end
 
   def edit
