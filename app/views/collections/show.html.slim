@@ -1,7 +1,7 @@
 section#vote-collection.section
   .container
     h1.title = @collection.name
-
+    .subtitle = "Order: %.1f - #{humanize_order(@order)}" % @order
     .options
       a.option.is-relative href=@a.img.url(:large) target="_blank"
         .option-bg.is-overlay style="background-image: url(#{@a.img.url(:large)})"

@@ -1,7 +1,8 @@
 class CollectionsController < ApplicationController
-  before_action :set_back, only: [:new, :edit, :show]
   before_action :by_slug, only: [:show, :vote]
   before_action :by_secret, only: [:edit, :update, :destroy, :results]
+  before_action :set_order, only: [:show, :results]
+  before_action :set_back, only: [:new, :edit, :show]
 
   def index
     @collections = Collection.where(priv: false, approved: true)
@@ -49,7 +50,6 @@ class CollectionsController < ApplicationController
   end
 
   def results
-    @order = @collection.calc_order
     @back_url = edit_collection_path(@collection.secret)
   end
 
@@ -61,6 +61,10 @@ class CollectionsController < ApplicationController
   private
     def set_back
       @back_url = root_path
+    end
+
+    def set_order
+      @order = @collection.calc_order
     end
 
     def by_slug
@@ -83,6 +87,6 @@ class CollectionsController < ApplicationController
     end
 
     def pick_item(items, slug)
-      item = items.where(slug: slug).first
+      items.where(slug: slug).first
     end
 end

@@ -1,16 +1,16 @@
 module ApplicationHelper
   def humanize_order order
-    if order < 0.15
+    if order < 1
       "Awful"
-    elsif order < 0.3
+    elsif order < 2
       "Bad"
-    elsif order < 0.45
+    elsif order < 3
       "Poor"
-    elsif order < 0.6
+    elsif order < 5
       "Decent"
-    elsif order < 0.75
+    elsif order < 8
       "Good"
-    elsif order < 0.9
+    elsif order < 10
       "Great"
     else
       "Excellent"
