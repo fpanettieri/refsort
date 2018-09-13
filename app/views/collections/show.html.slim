@@ -33,8 +33,9 @@ javascript:
       }
 
       function onKeyPress(ev) {
-        if (ev.which == 65 || ev.which == 37) { vote($a); }
-        else if (ev.which == 66 || ev.which == 39) { vote($b); }
+        // optional 37 < , 39 >
+        if (ev.which == 65) { vote($a); }
+        else if (ev.which == 66) { vote($b); }
       }
 
       $btns.on('click', () => { vote($(this)); });
