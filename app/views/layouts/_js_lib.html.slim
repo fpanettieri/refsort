@@ -7,11 +7,8 @@ javascript:
     if (!err) { err = noop; }
 
     let csrf = $('meta[name="csrf-token"]').attr('content');
-    let xhr = new XMLHttpRequest();
-
     let json = JSON.stringify(data);
-    //let form_data = new FormData();
-    //for (let key in data) { form_data.append(key, data[key]); }
+    let xhr = new XMLHttpRequest();
 
     xhr.onerror = err;
     xhr.onload = function () {

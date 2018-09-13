@@ -27,10 +27,10 @@ class CollectionsController < ApplicationController
   end
 
   def vote
-    byebug
-
     @a = pick_item(@collection.items, params[:a])
     @b = pick_item(@collection.items, params[:b])
+    redirect_to root_path if (@a.nil? or @b.nil?)
+
     @voted = @a.slug.eql?(params[:v]) ? @a : @b
 
     @a.increment(:views)
@@ -84,6 +84,5 @@ class CollectionsController < ApplicationController
 
     def pick_item(items, slug)
       item = items.where(slug: slug).first
-      redirect_to root_path if item.nil?
     end
 end
