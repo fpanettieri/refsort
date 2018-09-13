@@ -25,6 +25,6 @@ class Collection < ApplicationRecord
     end
     @url = "https://refsort.com/#{self.slug}"
     @file = Paperclip.io_adapters.for(self.img.styles[:medium])
-    @@client.update_with_media("#{self.name}\n\n#{self.description}\n\n#{@url}", File.open(@file.path))
+    @@client.update_with_media("New Collection: #{self.name}\n\n#{self.description}\n\n#{@url}", File.open(@file.path))
   end
 end
