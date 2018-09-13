@@ -18,10 +18,13 @@ class Collection < ApplicationRecord
 
   def tweet!
     @@client ||= Twitter::REST::Client.new do |config|
-      config.consumer_key    = ENV['TWITTER_KEY']
-      config.consumer_secret = ENV['TWITTER_SECRET']
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
+      config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
     @url = "https://refsort.com/#{self.slug}"
-    @@client.update_with_media("New Collection: #{self.name} \n#{self.description}\n #{@url}", self.img.url(:medium))
+    #@@client.update_with_media("New Collection: #{self.name} \n#{self.description}\n #{@url}", File.new(self.img.url(:medium)))
+    @@client.update("New Collection: #{self.name} \n#{self.description}\n #{@url}")
   end
 end
