@@ -112,6 +112,14 @@
     background-color: #ff0;
     height: 25vh;
     margin-bottom: 1.5rem;
+    padding: 1rem;
+
+    .title {
+      padding: .5rem;
+      display: inline-block;
+      background-color: #222;
+      color: #fff;
+    }
   }
 
   .option-img {
