@@ -101,8 +101,9 @@
 
 #vote-collection {
   .options {
-    display: flex;
     background-color: #f0f;
+    display: flex;
+    flex-direction: column;
   }
 
   .option {
