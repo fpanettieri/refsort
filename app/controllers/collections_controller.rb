@@ -15,8 +15,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     if verify_recaptcha(model: @collection) && @collection.save
-      CollectionMailer.new_collection_email(@collection.name, @collection.description, @collection.slug, @collection.secret, params[:email]).deliver!
-      @collection.tweet! unless @collection.priv
+      deliver_external_notifications
       redirect_to edit_collection_path(@collection.secret)
     else
       render "new"
@@ -89,5 +88,14 @@ class CollectionsController < ApplicationController
 
     def pick_item(items, slug)
       items.where(slug: slug).first
+    end
+
+    def deliver_external_notifications
+      Thread.new do
+        Rails.application.executor.wrap do
+          CollectionMailer.new_collection_email(@collection.name, @collection.description, @collection.slug, @collection.secret, params[:email]).deliver!
+          @collection.tweet! unless @collection.priv
+        end
+      end
     end
 end
