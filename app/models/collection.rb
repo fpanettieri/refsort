@@ -24,7 +24,7 @@ class Collection < ApplicationRecord
       config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
     @url = "https://refsort.com/#{self.slug}"
-    @file = Paperclip.io_adapters.for(self.img)
+    @file = Paperclip.io_adapters.for(self.img.styles[:medium])
     @@client.update_with_media("#{self.name}\n\n#{self.description}\n\n#{@url}", File.open(@file.path))
   end
 end
