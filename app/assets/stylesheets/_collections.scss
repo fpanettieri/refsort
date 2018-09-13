@@ -150,7 +150,7 @@
 
 @media (min-width: 1024px) {
   #vote-collection {
-    .title { margin-bottom: 1.5rem; }
+    .title { margin-bottom: 2rem; }
 
     .options {
       flex-direction: row;
@@ -167,6 +167,7 @@
     .button {
       width: 48%;
       &:hover { transform: scale(1.05); }
+      &:active { transform: scale(0.95); }
     }
   }
 }
