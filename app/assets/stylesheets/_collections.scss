@@ -144,14 +144,28 @@
     font-weight: 600;
     transition: .1s all ease-out;
 
-
     &:active { transform: scale(0.95); }
   }
 }
 
 @media (min-width: 1024px) {
   #vote-collection {
+    .title { margin-bottom: 1.5rem; }
+
+    .options {
+      flex-direction: row;
+      height: 60vh;
+      margin-bottom: 3rem;
+      justify-content: space-between;
+    }
+
+    .option {
+      height: 100%;
+      width: 48%;
+    }
+
     .button {
+      width: 48%;
       &:hover { transform: scale(1.05); }
     }
   }
