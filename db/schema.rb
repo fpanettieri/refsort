@@ -39,13 +39,11 @@ ActiveRecord::Schema.define(version: 2018_09_15_054734) do
     t.string "name"
     t.text "description"
     t.boolean "priv", default: false
-    t.boolean "approved", default: true
+    t.boolean "approved", default: false
+    t.boolean "nsfw", default: false
+    t.boolean "flagged", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "img_file_name"
-    t.string "img_content_type"
-    t.bigint "img_file_size"
-    t.datetime "img_updated_at"
     t.index ["secret"], name: "index_collections_on_secret"
     t.index ["slug"], name: "index_collections_on_slug"
   end
@@ -58,12 +56,10 @@ ActiveRecord::Schema.define(version: 2018_09_15_054734) do
     t.integer "votes", default: 0
     t.integer "views", default: 0
     t.float "score", default: 0.0
+    t.boolean "nsfw", default: false
+    t.boolean "flagged", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "img_file_name"
-    t.string "img_content_type"
-    t.bigint "img_file_size"
-    t.datetime "img_updated_at"
     t.index ["collection_id"], name: "index_items_on_collection_id"
     t.index ["secret"], name: "index_items_on_secret"
     t.index ["slug"], name: "index_items_on_slug"

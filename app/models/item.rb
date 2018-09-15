@@ -12,12 +12,9 @@ class Item < ApplicationRecord
       self.score = self.votes.fdiv(self.views.to_f) * 10.0
     end
 
-    # has_attached_file :img, styles: { large: "1200x1200>", medium: "512x512>", thumb: "64x64>" }, default_url: "https://placeimg.com/600/600/any"
-    # validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
-
     def create_variants
       return unless self.img.attached?
-      self.img.variant(resize_to_fit: [512, 512]).processed
-      self.img.variant(resize_to_fit: [64, 64]).processed
+      self.img.variant(resize: 512).processed
+      self.img.variant(resize: 64).processed
     end
 end
