@@ -9,7 +9,8 @@ class Item < ApplicationRecord
 
   private
     def update_score
-      self.score = self.votes.fdiv(self.views.to_f) * 10.0
+      return if self.views == 0
+      self.score = self.votes.fdiv(self.views) * 10.0
     end
 
     def create_variants

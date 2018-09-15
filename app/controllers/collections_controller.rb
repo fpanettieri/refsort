@@ -5,7 +5,7 @@ class CollectionsController < ApplicationController
   before_action :set_back, only: [:new, :edit, :show]
 
   def index
-    @collections = Collection.where(priv: false, approved: true)
+    @collections = Collection.where(priv: false)
   end
 
   def new
