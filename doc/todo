@@ -1,15 +1,16 @@
 ============
   TODO
 ============
+  . Replace paperclip
+  . Direct upload from items screen
+  . Upload progress
+  . Bulk upload of items
+
   . Create a few sample collections
   . Launch Group 61
   . Google Search
   . Facebook / Tw meta tags
   
-  . Direct upload from items screen
-  . Upload progress
-  . Bulk upload of items
-
   . Flag collection / item
   . NSFW filter
   . Paginate Collections
