@@ -1,7 +1,7 @@
 ============
   TODO
 ============
-  . Replace paperclip
+  - Replace paperclip
   . Direct upload from items screen
   . Upload progress
   . Bulk upload of items
@@ -10,7 +10,8 @@
   . Launch Group 61
   . Google Search
   . Facebook / Tw meta tags
-  
+  . Restore tweet images
+
   . Flag collection / item
   . NSFW filter
   . Paginate Collections

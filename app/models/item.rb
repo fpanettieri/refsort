@@ -17,7 +17,7 @@ class Item < ApplicationRecord
 
     def create_variants
       return unless self.img.attached?
-      self.img.variant(resize_to_fit: [512, 512])
-      self.img.variant(resize_to_fit: [64, 64])
+      self.img.variant(resize_to_fit: [512, 512]).processed
+      self.img.variant(resize_to_fit: [64, 64]).processed
     end
 end

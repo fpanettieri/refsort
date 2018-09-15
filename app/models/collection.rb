@@ -26,12 +26,12 @@ class Collection < ApplicationRecord
       config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
     @url = "https://refsort.com/#{self.slug}"
-    @file = Paperclip.io_adapters.for(self.img.styles[:medium])
-    @@client.update_with_media("New Collection: #{self.name}\n\n#{self.description}\n\n#{@url}", File.open(@file.path))
+    @@client.update("New Collection: #{self.name}\n\n#{self.description}\n\n#{@url}")
+    # @@client.update_with_media("New Collection: #{self.name}\n\n#{self.description}\n\n#{@url}", File.open(@file.path))
   end
 
   private
     def create_variants
-      self.img.variant(resize_to_fit: [512, 512]) if self.img.attached?
+      self.img.variant(resize_to_fit: [512, 512]).processed if self.img.attached?
     end
 end
