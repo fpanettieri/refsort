@@ -6,10 +6,10 @@ gem 'rails', '~> 5.2.1'
 
 gem 'aws-sdk-s3', '~> 1.19'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'image_processing', '~> 1.2'
+gem 'jbuilder', '~> 2.5'
 gem 'mysql2', '~> 0.5.2'
 gem 'recaptcha', '~> 4.12'
-gem 'jbuilder', '~> 2.5'
-gem 'paperclip', '~> 6.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'slim', '~> 4.0.1'
 gem 'sqlite3', '~> 1.3', '>= 1.3.13'
