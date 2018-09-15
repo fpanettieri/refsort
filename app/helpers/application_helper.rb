@@ -16,4 +16,8 @@ module ApplicationHelper
       "Excellent"
     end
   end
+
+  def variant_url img, size
+    img.variant(resize_to_fit: [size, size]) if img.attached?
+  end
 end

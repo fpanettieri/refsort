@@ -14,7 +14,7 @@ section.section
     - for item in @collection.items.order(score: :desc)
       .item.level data-href=edit_collection_item_path(collection_id: @collection.secret, id: item.secret)
         .level-item
-          .item-img style="background-image: url(#{item.img.url(:thumb)})"
+          .item-img style="background-image: url(#{varian_url item.img, 64})"
 
         .level-item.has-text-centered
           div

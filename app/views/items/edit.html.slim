@@ -19,7 +19,7 @@
     .half.half-right.separator
       section.section
         h1.title Preview
-        = image_tag @item.img.url(:medium)
+        = image_tag variant_url @item.img, 512
         p.help = @item.img_file_name
 
 javascript:

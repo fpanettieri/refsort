@@ -12,7 +12,7 @@ section#collections.section
       - @collections.order(updated_at: :desc).each do |collection|
         .column.is-3
           a.card.collection href="/collections/#{collection.slug}"
-            .card-bg.is-overlay style="background-image: url(#{collection.img.url(:medium)})"
+            .card-bg.is-overlay style="background-image: url(#{variant_url collection.img, 512})"
             .card-content.is-relative
               .title = collection.name
               .description = collection.description
