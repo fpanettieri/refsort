@@ -18,6 +18,6 @@ module ApplicationHelper
   end
 
   def variant_url img, size
-    img.variant(resize: size) if img.attached?
+    url_for(img.variant(resize: size)) if img.attached?
   end
 end
