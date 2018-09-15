@@ -11,11 +11,11 @@ section#vote-collection.section
       .subtitle = "Order: %.2f (#{humanize_order(@order)})" % @order
       .options
         a.option.is-relative href=@a.img.url(:large) target="_blank"
-          .option-bg.is-overlay style="background-image: url(#{@a.img.url(:large)})"
+          .option-bg.is-overlay style="background-image: url(#{@a.img.url(:medium)})"
           h1.title.is-relative A
 
         a.option.is-relative href=@b.img.url(:large) target="_blank"
-          .option-bg.is-overlay style="background-image: url(#{@b.img.url(:large)})"
+          .option-bg.is-overlay style="background-image: url(#{@b.img.url(:medium)})"
           h1.title.is-relative B
 
       .picker.buttons.has-addons
