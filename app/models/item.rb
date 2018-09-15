@@ -11,7 +11,7 @@ class Item < ApplicationRecord
 
   private
     def update_score
-      return if self.votes.nan? or self.views.nan?
-      self.score = self.votes.fdiv(self.views.to_f) * 10.0
+      return if self.views == 0
+      self.score = self.votes.fdiv(self.views) * 10.0
     end
 end
