@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :votes, default: 0
       t.integer :views, default: 0
-      t.float :score, default: 0
+      t.float :score, default: 0.0
       t.boolean :nsfw, default: false
       t.boolean :flagged, default: false
 
