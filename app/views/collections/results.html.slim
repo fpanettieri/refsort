@@ -6,6 +6,6 @@ section#collections.section
       - @collection.items.order(score: :desc).each do |item|
         .column.is-3
           a.card.collection href=url_for(item.img) target="_blank"
-            .card-bg.is-overlay style="background-image: url(#{variant_url item.img.url, 512})"
+            .card-bg.is-overlay style="background-image: url(#{variant_url item.img, 512})"
             .card-content.is-relative
               .title = "%.1f" % item.score
