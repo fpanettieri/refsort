@@ -20,7 +20,7 @@
       section.section
         h1.title Preview
         = image_tag variant_url @item.img, 512
-        p.help = @item.img_file_name
+        p.help = @item.img.filename.to_s
 
 javascript:
   $(() => {
