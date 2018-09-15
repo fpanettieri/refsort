@@ -8,6 +8,7 @@ class Collection < ApplicationRecord
   validates :description, length: {maximum: 100}, allow_nil: true
 
   has_one_attached :img
+  after_save :create_variants
   #has_attached_file :img, styles: { medium: "400x600>" }, default_url: "https://placeimg.com/400/600/any"
   #validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
 
@@ -28,4 +29,9 @@ class Collection < ApplicationRecord
     @file = Paperclip.io_adapters.for(self.img.styles[:medium])
     @@client.update_with_media("New Collection: #{self.name}\n\n#{self.description}\n\n#{@url}", File.open(@file.path))
   end
+
+  private
+    def create_variants
+      self.img.variant(resize_to_fit: [512, 512]) if self.img.attached?
+    end
 end
