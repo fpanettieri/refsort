@@ -5,6 +5,8 @@
   . Direct upload from items screen
   . Upload progress
   . Bulk upload of items
+  . Add 'vote' button to edit screen
+  . Vote screen not working in safari
 
   . Clone a collection
   . Create a few sample collections
@@ -20,6 +22,8 @@
   . Categories
   . Tags
   . Only sort top 10
+  . 'Embed' link, so any voter can see the results after 'x' amount of votes
+  . Plugin to create collection
 
 ============
   DONE
