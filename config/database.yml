@@ -1,10 +1,6 @@
 # MySQL
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: localhost
+  adapter: sqlite3
   pool: 5
   timeout: 5000
 
@@ -17,10 +13,5 @@ test:
   database: refsort_test
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  <<: *default
+  database: refsort_prd
