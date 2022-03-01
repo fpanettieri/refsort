@@ -6,7 +6,7 @@ gem 'rails', '~> 5.2.1'
 
 gem 'aws-sdk-s3', '~> 1.42'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'image_processing', '~> 1.9'
+gem 'image_processing', '~> 1.12'
 gem 'jbuilder', '~> 2.9'
 gem 'mysql2', '~> 0.5.2'
 gem 'recaptcha', '~> 5.0'
