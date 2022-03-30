@@ -19,7 +19,7 @@ gem 'uglifier', '>= 4.1.20'
 
 group :development do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'puma', '~> 3.12'
+  gem 'puma', '~> 4.3'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.1.5', '< 3.2'
   gem 'spring'
